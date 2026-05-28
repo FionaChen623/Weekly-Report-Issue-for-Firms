@@ -1,0 +1,44 @@
+{
+  "id": "send_weekly_report_reminder_feishu_message_1",
+  "pluginKey": "@official-plugins/send-feishu-message",
+  "pluginVersion": "1.0.27",
+  "name": "周报系统提醒通知发送",
+  "description": "用于周报系统向员工发送周报截止提醒、逾期提醒等飞书通知，接收人通过参数动态指定。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "reminder_content": {
+        "type": "string",
+        "description": "提醒消息正文内容"
+      },
+      "receive_id": {
+        "type": "array",
+        "description": "接收通知的用户ID列表",
+        "items": {
+          "type": "string",
+          "description": "单个用户ID"
+        }
+      },
+      "reminder_title": {
+        "type": "string",
+        "description": "提醒消息标题"
+      }
+    },
+    "required": [
+      "receive_id",
+      "reminder_title",
+      "reminder_content"
+    ]
+  },
+  "formValue": {
+    "title": "{{input.reminder_title}}",
+    "content": "{{input.reminder_content}}",
+    "receiverUserList": "{{input.receive_id}}",
+    "sender": "bot",
+    "buttons": []
+  },
+  "createdAt": 1779936971311,
+  "updatedAt": 1779936971311,
+  "createdBy": 7644000430162234309
+}
